@@ -20,7 +20,7 @@ var Esri_WorldGrayCanvas = L.tileLayer('http://server.arcgisonline.com/ArcGIS/re
 });
 
 //add the tilelayer to the map
-Esri_WorldGrayCanvas.addTo(mymap);
+//Esri_WorldGrayCanvas.addTo(mymap);
 
 //here is another tile system you can try
 var OpenTopoMap = L.tileLayer('http://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
@@ -28,7 +28,7 @@ var OpenTopoMap = L.tileLayer('http://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',
     attribution: 'Map data: &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
 });
 
-//OpenTopoMap.addTo(mymap);
+OpenTopoMap.addTo(mymap);
 
 //when the button on is clicked
 $('#shakey').click(function() {
@@ -58,5 +58,3 @@ $('#shakey').click(function() {
         });
     });
 });
-
-

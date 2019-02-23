@@ -11,13 +11,13 @@ $(function(){
 function getResultsFromYouTube (searchterms) {
 	//call youtube API using AJAX
 	//build url for the request
-		var url = "http://www.omdbapi.com/?s="+searchterms;
+		var url = "http://www.omdbapi.com/?s="+searchterms+"&apikey=561a7692";
 		//use jquery json shortcut
 		$.getJSON(url, function(jsondata){
 			//handle the results
 			addResultTitles(jsondata);
 		});
-		
+
 }
 
 function addResultTitles(jsondata) {
@@ -26,11 +26,10 @@ function addResultTitles(jsondata) {
 	//iterate over the collection of results
 	for (var i=0; i<10; i++){
 		var title = jsondata.Search[i].Title;
-		htmlstring += "<li>" + title + "</li>";
+		var poster = jsondata.Search[i].Poster;
+		htmlstring += "<li>" + title + "<img src='"+poster+"'/></li>";
 	}
-	
+
 	//inject the HTML into our empty list
 	$("#results").html(htmlstring);
 }
-
-
