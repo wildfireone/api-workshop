@@ -59,26 +59,4 @@ $('#shakey').click(function() {
     });
 });
 
-$('#dropey').click(function() {
-    //getting meteors
-    $.ajax({
-        url: 'https://data.nasa.gov/resource/gh4g-9sfh.json',
-        dataType: 'json',
-        success: function(data) {
-            data.forEach(function(meteor) {
-                if (meteor.geolocation) {
-                    var lng = meteor.geolocation.longitude;
-                    var lat = meteor.geolocation.latitude;
-                    var circle = L.circle([lat, lng], 50, {
-                        color: 'blue',
-                        opacity: 0,
-                        fillColor: 'blue',
-                        fillOpacity: 0.5
-                    });
-                    //and add it to the map
-                    circle.addTo(mymap);
-                }
-            });
-        }
-    });
-}); 
+
